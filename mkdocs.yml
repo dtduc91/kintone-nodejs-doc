@@ -1,0 +1,25 @@
+site_name: kintone Node.js SDK
+site_description: The SDK of kintone REST API client on Node.js
+site_favicon: 'https://www.kintone.com/wp-content/uploads/2017/10/favicon.png'
+repo_url: https://github.com/kintone/nodejs-sdk
+theme:
+  name: 'material'
+  palette:
+    primary: 'Light Blue'
+    accent: 'Light Blue'
+pages:
+- Home: index.md
+- Getting Started: 
+  - Quickstart: getting-started/quickstart.md
+- Reference:
+  - Authentication: reference/authentication.md
+  - Connection: reference/connection.md
+  - Record: reference/record.md
+  - Bulk Request: reference/bulk-request.md
+  - File: reference/file.md
+  - App: reference/app.md
+  - Kintone APIException: reference/kintone-api-exception.md
+extra_javascript:
+  - 'asset/js/extra.js'
+extra_css:
+  - 'asset/style/extra.css'
