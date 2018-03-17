@@ -12,13 +12,13 @@
 
 ## Reference
 
-* [Authentication](/reference/authentication)
-* [Connection](/reference/connection)
-* [Record](/reference/record)
-* [BulkRequest](/reference/bulk-request)
-* [App](/reference/app)
-* [File](/reference/file)
-* [KintoneAPIException](/reference/kintone-api-exception)
+* [Authentication](./reference/authentication)
+* [Connection](./reference/connection)
+* [Record](./reference/record)
+* [BulkRequest](./reference/bulk-request)
+* [App](./reference/app)
+* [File](./reference/file)
+* [KintoneAPIException](./reference/kintone-api-exception)
 
 ## License
 
