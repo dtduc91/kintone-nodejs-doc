@@ -108,7 +108,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="kintone Node.js SDK" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -204,7 +204,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </span>
     kintone Node.js SDK
@@ -727,7 +727,7 @@
                 
                 
                 <h1 id="record">Record</h1>
-<p>This module will provide functions of CURD, update the record status &amp; assignees in the kintone app</p>
+<p>Provide functions of CURD, update the record status &amp; assignees in the kintone app</p>
 <h2 id="constructor">Constructor</h2>
 <p><strong>Parameter</strong></p>
 <table>
@@ -755,11 +755,14 @@
 <pre><code class="javascript">
 const kintone = 'kintone-nodejs-sdk';
 
-let kintoneRecord = kintone.Record(connection);
+let kintoneRecord = new kintone.Record(connection);
 </code></pre>
 
 <p></details></p>
 <h2 id="methods">Methods</h2>
+<blockquote>
+<p>Retrieves details of 1 record from an app.</p>
+</blockquote>
 <h3 id="getrecordappid-recordid">getRecord(appID, recordID)</h3>
 <p><strong>Parameter</strong></p>
 <table>
@@ -806,6 +809,9 @@ kintoneRecord.getRecord(appID, recordID)
 
 <p></details></p>
 <h3 id="getrecordsappid-query-fieldscode-isshowtotalcount">getRecords(appID, query, fieldsCode, isShowTotalCount)</h3>
+<blockquote>
+<p>Retrieves details of multiple records from an app using a query string.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -833,13 +839,13 @@ kintoneRecord.getRecord(appID, recordID)
 <td>fields</td>
 <td>Array&lt;String></td>
 <td>(optional)</td>
-<td>The field codes that you want in the response.</td>
+<td>List of field codes you want in the response.</td>
 </tr>
 <tr>
 <td>totalCount</td>
 <td>Boolean</td>
-<td>optional)</td>
-<td>If set to "true", the request will retrieve the total count of records that were retrieved that match the query conditions.</td>
+<td>(optional)</td>
+<td>If "true", the request will retrieve total count of records match with query conditions.</td>
 </tr>
 </tbody>
 </table>
@@ -868,6 +874,9 @@ kintoneRecord.getRecords(appID, query, fieldsCode, isShowTotalCount)
 
 <p></details></p>
 <h3 id="addrecordappid-recorddata">addRecord(appID, recordData)</h3>
+<blockquote>
+<p>Adds 1 record to an app.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -889,7 +898,7 @@ kintoneRecord.getRecords(appID, query, fieldsCode, isShowTotalCount)
 <td>recordData</td>
 <td>JSONObject</td>
 <td>yes</td>
-<td>The record data that will being added to kintone app. See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>The record data to be add to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page</td>
 </tr>
 </tbody>
 </table>
@@ -918,6 +927,9 @@ kintoneRecord.addRecord(appID, recordData)
 
 <p></details></p>
 <h3 id="addrecordsappid-recordsdata">addRecords(appID, recordsData)</h3>
+<blockquote>
+<p>Adds multiple records to an app.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -939,7 +951,7 @@ kintoneRecord.addRecord(appID, recordData)
 <td>recordsData</td>
 <td>Array&lt;JSONObject></td>
 <td>yes</td>
-<td>The records data that will being added to kintone app. See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>List of records data to be add to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 </tbody>
 </table>
@@ -972,6 +984,9 @@ kintoneRecord.addRecords(appID, recordsData)
 
 <p></details></p>
 <h3 id="updaterecordbyidappid-recordid-recorddata-revision">updateRecordById(appID, recordID, recordData, revision)</h3>
+<blockquote>
+<p>Updates details of 1 record in an app by specifying its record number.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -999,7 +1014,7 @@ kintoneRecord.addRecords(appID, recordsData)
 <td>recordData</td>
 <td>JSONObject</td>
 <td>yes</td>
-<td>The record data that will being added to kintone app. See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>The record data to be update in  kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 <tr>
 <td>revision</td>
@@ -1036,6 +1051,7 @@ kintoneRecord.updateRecordById(appID, recordID, recordData, revision)
 
 <p></details></p>
 <h3 id="updaterecordbyupdatekeyappid-updatekey-recorddata-revision">updateRecordByUpdateKey(appID, updateKey, recordData, revision)</h3>
+<p>Updates details of 1 record in an app by unique key.</p>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1057,13 +1073,13 @@ kintoneRecord.updateRecordById(appID, recordID, recordData, revision)
 <td>updateKey</td>
 <td>JSONObject</td>
 <td>yes</td>
-<td>The unique key of the record to be updated. See belowsample codee or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>The unique key of the record to be updated. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 <tr>
 <td>recordData</td>
 <td>JSONObject</td>
 <td>yes</td>
-<td>The record data that will being added to kintone app. See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>The record data will be added to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 <tr>
 <td>revision</td>
@@ -1103,6 +1119,9 @@ kintoneRecord.updateRecordByUpdateKey(appID, updateKey, recordData, revision)
 
 <p></details></p>
 <h3 id="updaterecordsappid-recordsdata">updateRecords(appID, recordsData)</h3>
+<blockquote>
+<p>Updates details of multiple records in an app, by specifying their record number, or a different unique key.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1124,7 +1143,7 @@ kintoneRecord.updateRecordByUpdateKey(appID, updateKey, recordData, revision)
 <td>recordsData</td>
 <td>Array&lt;JSONObject></td>
 <td>yes</td>
-<td>The record data that will being added to kintone app. See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>The record data will be added to kintone app. About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 </tbody>
 </table>
@@ -1166,6 +1185,9 @@ kintoneRecord.updateRecords(appID, recordsDataUpdate)
 
 <p></details></p>
 <h3 id="deleterecordsappid-recordids">deleteRecords(appID, recordIDs)</h3>
+<blockquote>
+<p>Deletes multiple records in an app.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1187,7 +1209,7 @@ kintoneRecord.updateRecords(appID, recordsDataUpdate)
 <td>recordIDs</td>
 <td>Array&lt;Integer></td>
 <td>yes</td>
-<td>The list ids of record that you want to delete.</td>
+<td>The list ids of record will be delete.</td>
 </tr>
 </tbody>
 </table>
@@ -1211,6 +1233,9 @@ kintoneRecord.deleteRecords(appID, recordIDs)
 
 <p></details></p>
 <h3 id="deleterecordswithrevisionappid-idswithrevision">deleteRecordsWithRevision(appID, idsWithRevision)</h3>
+<blockquote>
+<p>Deletes multiple records in an app with revision.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1258,6 +1283,9 @@ kintoneRecord.deleteRecordsWithRevision(appID, idsWithRevision)
 
 <p></details></p>
 <h3 id="updaterecordassigneesappid-recordid-assignees-revision">updateRecordAssignees(appID, recordID, assignees, revision)</h3>
+<blockquote>
+<p>Update assignees of a record.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1318,6 +1346,9 @@ kintoneRecord.updateRecordAssignees(appID, recordID, assignees, revision)
 
 <p></details></p>
 <h3 id="updaterecordstatusappid-recordid-actionname-assignee-revision">updateRecordStatus(appID, recordID, actionName, assignee, revision)</h3>
+<blockquote>
+<p>Updates the Status of a record of an app.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1333,19 +1364,19 @@ kintoneRecord.updateRecordAssignees(appID, recordID, assignees, revision)
 <td>appID</td>
 <td>Integer</td>
 <td>yes</td>
-<td>The kintone app ID</td>
+<td>The kintone app ID.</td>
 </tr>
 <tr>
 <td>recordID</td>
 <td>Integer</td>
 <td>yes</td>
-<td>The record ID on kintone app</td>
+<td>The record ID on kintone app.</td>
 </tr>
 <tr>
 <td>actionName</td>
 <td>String</td>
 <td>yes</td>
-<td>The Action name of the action you want to run</td>
+<td>The Action name will be run.</td>
 </tr>
 <tr>
 <td>assignee</td>
@@ -1385,6 +1416,9 @@ kintoneRecord.updateRecordStatus(appID, recordID, actionName, assignee, revision
 
 <p></details></p>
 <h3 id="updaterecordsstatusappid-recordsstatusupdate">updateRecordsStatus(appID, recordsStatusUpdate)</h3>
+<blockquote>
+<p>Updates the Status of multiple records of an app.</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -1466,13 +1500,13 @@ kintoneRecord.updateRecordsStatus(appID, recordsStatusUpdate)
 <td>order</td>
 <td>String</td>
 <td>(optional)</td>
-<td>The sort order of the Comment ID. Either <strong>asc</strong> or <strong>desc</strong></td>
+<td>The sort order of the Comment ID. Please select <strong>asc</strong> or <strong>desc</strong></td>
 </tr>
 <tr>
 <td>offset</td>
 <td>Integer</td>
 <td>(optional)</td>
-<td>This skips the retrieval of the first number of comments.</td>
+<td>The number of first comments will be ignored.</td>
 </tr>
 <tr>
 <td>limit</td>
@@ -1532,7 +1566,7 @@ kintoneRecord.getComments(appID, recordID, order, offset, limit)
 <td>commentContent</td>
 <td>JSONObject</td>
 <td>yes</td>
-<td>See below sample code or <a href="#reference">reference</a> at the end of this page to know format.</td>
+<td>About the format, please look the sample below or <a href="#reference">reference</a> at the end of this page.</td>
 </tr>
 </tbody>
 </table>

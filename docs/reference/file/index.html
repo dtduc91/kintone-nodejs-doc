@@ -108,7 +108,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="kintone Node.js SDK" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -204,7 +204,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </span>
     kintone Node.js SDK
@@ -559,12 +559,15 @@
 <pre><code class="javascript">
 const kintone = 'kintone-nodejs-sdk';
 
-let kintoneFile = kintone.File(connection);
+let kintoneFile = new kintone.File(connection);
 </code></pre>
 
 <p></details></p>
 <h2 id="methods">Methods</h2>
 <h3 id="uploadfilepath">upload(filePath)</h3>
+<blockquote>
+<p>Upload file to kintone app</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>
@@ -602,6 +605,9 @@ kintoneFile.upload(fullPathFile);
 
 <p></details></p>
 <h3 id="downloadfilekey-outputfilepath">download(fileKey, outPutFilePath)</h3>
+<blockquote>
+<p>Download file from kintone app to local</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <table>
 <thead>

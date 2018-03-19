@@ -108,7 +108,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="kintone Node.js SDK" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -204,7 +204,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </span>
     kintone Node.js SDK
@@ -749,7 +749,7 @@
 <pre><code class="javascript">
 const kintone = 'kintone-nodejs-sdk';
 
-let kintoneBulkRequest = kintone.BulkRequest(connection);
+let kintoneBulkRequest = new kintone.BulkRequest(connection);
 </code></pre>
 
 <p></details></p>
@@ -808,6 +808,9 @@ let kintoneBulkRequest = kintone.BulkRequest(connection);
 <p><strong>Return</strong></p>
 <p><a href="#bulkrequest">BulkRequest</a></p>
 <h3 id="execute">execute()</h3>
+<blockquote>
+<p>Execute the bulk request and get data response</p>
+</blockquote>
 <p><strong>Parameter</strong></p>
 <p>(none)</p>
 <p><strong>Return</strong></p>
@@ -830,7 +833,7 @@ responseBulkRequest
     .catch((err) =&gt; {
         // write error to console
         console.log(err.get());
-        // Thorw error
+        // Throw error
         err.throw()
     });
 </code></pre>

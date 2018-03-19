@@ -108,7 +108,7 @@
       <div class="md-flex__cell md-flex__cell--shrink">
         <a href="../.." title="kintone Node.js SDK" class="md-header-nav__button md-logo">
           
-            <i class="md-icon"></i>
+            <i class="md-icon">cloud</i>
           
         </a>
       </div>
@@ -204,7 +204,7 @@
   <label class="md-nav__title md-nav__title--site" for="drawer">
     <span class="md-nav__button md-logo">
       
-        <i class="md-icon"></i>
+        <i class="md-icon">cloud</i>
       
     </span>
     kintone Node.js SDK
@@ -655,6 +655,13 @@
                 
                 
                 <h1 id="app">App</h1>
+<p>Gets general information of an App, including the name, description, related Space, creator and updater information.</p>
+<blockquote>
+<ul>
+<li>Permissions to view the App is needed.</li>
+<li>API Tokens cannot be used with this API.</li>
+</ul>
+</blockquote>
 <h2 id="constructor">Constructor</h2>
 <p><strong>Parameter</strong></p>
 <table>
@@ -682,12 +689,15 @@
 <pre><code class="javascript">
 const kintone = 'kintone-nodejs-sdk';
 
-let kintoneApp = kintone.App(connection);
+let kintoneApp = new kintone.App(connection);
 </code></pre>
 
 <p></details></p>
 <h2 id="methods">Methods</h2>
 <h3 id="getappappid">getApp(appID)</h3>
+<blockquote>
+<p>Get single app</p>
+</blockquote>
 <h4 id="parameter"><strong>Parameter</strong></h4>
 <table>
 <thead>
@@ -726,6 +736,9 @@ kintoneApp.getApp(appID)
 
 <p></details></p>
 <h3 id="getappslimit-offset">getApps(limit, offset)</h3>
+<blockquote>
+<p>Get multiple apps</p>
+</blockquote>
 <p><strong>Parameter </strong></p>
 <table>
 <thead>
@@ -771,6 +784,9 @@ kintoneApp.getApps(limit, offset)
 
 <p></details></p>
 <h3 id="getappsbyidsids-limit-offset">getAppsByIDs(ids, limit, offset)</h3>
+<blockquote>
+<p>Get multiple apps by list of ids</p>
+</blockquote>
 <p><strong>Parameter </strong></p>
 <table>
 <thead>
@@ -823,6 +839,9 @@ kintoneApp.getAppsByIDs(appIDs, limit, offset)
 
 <p></details></p>
 <h3 id="getappsbycodescodes-limit-offset">getAppsByCodes(codes, limit, offset)</h3>
+<blockquote>
+<p>Get multiple apps by a list of codes name</p>
+</blockquote>
 <p><strong>Parameter </strong></p>
 <table>
 <thead>
@@ -875,6 +894,9 @@ kintoneApp.getAppsByCodes(codes, limit, offset)
 
 <p></details></p>
 <h3 id="getappsbynamename-limit-offset">getAppsByName(name, limit, offset)</h3>
+<blockquote>
+<p>Get multiple apps by name</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -926,6 +948,9 @@ kintoneApp.getAppsByName(name, limit, offset)
 
 <p></details></p>
 <h3 id="getappsbyspaceidsspaceids-limit-offset">getAppsBySpaceIDs(spaceIDs, limit, offset)</h3>
+<blockquote>
+<p>Get multiple apps by list of space's ids</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -977,6 +1002,9 @@ kintoneApp.getAppsBySpaceIDs(spaceIDs, limit, offset)
 
 <p></details></p>
 <h3 id="getformfieldsappid-language">getFormFields(appID, language)</h3>
+<blockquote>
+<p>Get field of form in kintone app</p>
+</blockquote>
 <table>
 <thead>
 <tr>
@@ -1027,6 +1055,9 @@ kintoneApp.getFormFields(appID, langCode)
 
 <p></details></p>
 <h3 id="getformlayoutappid">getFormLayout(appID)</h3>
+<blockquote>
+<p>Get layout of form in kintone app</p>
+</blockquote>
 <table>
 <thead>
 <tr>
