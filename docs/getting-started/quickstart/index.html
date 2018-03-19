@@ -564,10 +564,10 @@ kintoneRecord.getRecord(appID, recordID)
 <pre><code class="javascript">
 const kintone = 'kintone-nodejs-sdk';
 
-let kintoneAuthWithAPIToken = kintone.AuthWithAPIToken('MY_TOKEN');
-let kintoneConnection = kintone.Connection('your.FQDN', kintoneAuthWithAPIToken);
+let kintoneAuthWithAPIToken = (new kintone.Auth()).setAPIToken('MY_TOKEN');
+let kintoneConnection = new kintone.Connection('your.FQDN', kintoneAuthWithAPIToken);
 
-let kintoneRecord = kintone.Record(kintoneConnection);
+let kintoneRecord = new kintone.Record(kintoneConnection);
 
 let appID = {your_app_id};
 let recordID = {record_id_that_will_be_retrived};
